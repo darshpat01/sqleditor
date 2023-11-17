@@ -4,10 +4,10 @@ import { useContext } from "react";
 
 function Table() {
   const { tableData } = useContext(MyContext);
-  console.log(1);
+
   return (
     <>
-      <div className="border border-black h-1/2 w-full">
+      <div className="border border-black w-full">
         {tableData.length > 0 ? (
           <div>
             <table className="table-auto w-full">

@@ -1,4 +1,4 @@
-import CodeMirror from "@uiw/react-codemirror";
+import ReactCodeMirror from "@uiw/react-codemirror";
 import { sql } from "@codemirror/lang-sql";
 import { MyContext } from "../MyContext";
 import { useContext } from "react";
@@ -8,11 +8,10 @@ function Editor() {
 
   return (
     <>
-      <CodeMirror
+      <ReactCodeMirror
+        height="100% !important"
         value={query}
         extensions={[sql()]}
-        className="text-left"
-        height="400px"
         onChange={(value) => {
           setQuery(value);
         }}
