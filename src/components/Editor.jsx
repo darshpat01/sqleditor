@@ -8,6 +8,7 @@ function Editor() {
   return (
     <>
       <ReactCodeMirror
+        className="text-lg"
         height="100%"
         value={query}
         extensions={[sql()]}

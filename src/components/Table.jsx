@@ -8,8 +8,8 @@ function Table() {
   return (
     <>
       {tableData.length > 0 ? (
-        <div className="flex justify-center w-full h-full">
-          <table className="table-auto max-h-full w-full">
+        <div className="flex justify-center w-full h-full ">
+          <table className="table-auto max-h-full w-full dark:bg-white">
             <thead>
               <tr>
                 {Object.keys(tableData[0]).map((key) => (
@@ -30,7 +30,9 @@ function Table() {
         </div>
       ) : (
         <div className="flex justify-center w-full h-full">
-          <div className="flex items-center justify-center">No data</div>
+          <div className="flex items-center justify-center dark:text-white">
+            No data
+          </div>
         </div>
       )}
     </>
