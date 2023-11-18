@@ -10,7 +10,7 @@ function Sidebar() {
           <FaDatabase />
           SQLEditor
         </div>
-        <div className="flex-1 flex flex-col">
+        <div className="flex flex-col overflow-auto flex-1">
           <AvailableQuery />
           <History />
         </div>

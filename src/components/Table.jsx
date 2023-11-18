@@ -12,16 +12,20 @@ function Table() {
           <table className="table-auto max-h-full w-full dark:bg-white">
             <thead>
               <tr className="bg-lightColor-100 text-white">
-                {Object.keys(tableData[0]).map((key) => (
-                  <th className="border border-black px-4 py-2">{key}</th>
+                {Object.keys(tableData[0]).map((key, i) => (
+                  <th key={i} className="border border-black px-4 py-2">
+                    {key}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {tableData.map((row) => (
-                <tr>
-                  {Object.values(row).map((value) => (
-                    <td className="border border-black px-4 py-2">{value}</td>
+              {tableData.map((row, i) => (
+                <tr key={i}>
+                  {Object.values(row).map((value, j) => (
+                    <td key={j} className="border border-black px-4 py-2">
+                      {value}
+                    </td>
                   ))}
                 </tr>
               ))}

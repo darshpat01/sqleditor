@@ -4,13 +4,23 @@ import { data1, data2 } from "../assets/data";
 import { IoSunny, IoMoon } from "react-icons/io5";
 
 function EditorPanel() {
-  const { query, setQuery, setTableData, isDarkMode, toggleDarkMode } =
-    useContext(MyContext);
+  const {
+    query,
+    setQuery,
+    setTableData,
+    isDarkMode,
+    toggleDarkMode,
+    history,
+    setHistory,
+  } = useContext(MyContext);
 
   const runHandler = () => {
     if (query === "SELECT * FROM table1;") {
+      setHistory([...history, query]);
       setTableData(data1);
     } else if (query === "SELECT * FROM table2;") {
+      setHistory([...history, query]);
+
       setTableData(data2);
     } else {
       setTableData([]);

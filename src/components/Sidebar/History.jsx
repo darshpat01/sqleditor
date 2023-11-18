@@ -3,13 +3,13 @@ import { MyContext } from "../../MyContext";
 import { useContext } from "react";
 
 function History() {
-  const { histroy, setHistory } = useContext(MyContext);
+  const { history, setHistory } = useContext(MyContext);
   return (
     <>
-      <div className="rounded-lg p-4 bg-lightColor-300 mt-4 basis-1/2 dark:bg-darkColor-300">
-        <div className="font-bold text-xl dark:text-white">History</div>
-        <div className="h-full overflow-y-auto">
-          {histroy && histroy.map((q, i) => <QueryHistory key={i} q={q} />)}
+      <div className="flex flex-col rounded-lg p-4 bg-lightColor-300 mt-4 dark:bg-darkColor-300 flex-1 overflow-auto">
+        <div className="font-bold text-xl dark:text-white mb-2">History</div>
+        <div className="overflow-auto flex-1">
+          {history && history.map((q, i) => <QueryHistory key={i} q={q} />)}
         </div>
       </div>
     </>
