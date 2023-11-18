@@ -15,13 +15,24 @@ function EditorPanel() {
       alert("Please select from the available queries.");
     }
   };
+
+  const clearHandler = () => {
+    setQuery("");
+    setTableData([]);
+  };
   return (
-    <div className="flex justify-end px-4 py-2">
+    <div className="flex justify-end px-4 py-2 gap-2">
       <button
         className="rounded-lg p-2 bg-blue-500 text-white font-boldn min-w-[5em] hover:bg-blue-600"
         onClick={runHandler}
       >
         Run
+      </button>
+      <button
+        className="rounded-lg p-2 bg-green-500 text-white font-boldn min-w-[5em] hover:bg-green-600"
+        onClick={clearHandler}
+      >
+        Clear
       </button>
     </div>
   );
