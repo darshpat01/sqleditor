@@ -11,7 +11,7 @@ function Table() {
         <div className="flex justify-center w-full h-full ">
           <table className="table-auto max-h-full w-full dark:bg-white">
             <thead>
-              <tr>
+              <tr className="bg-lightColor-100 text-white">
                 {Object.keys(tableData[0]).map((key) => (
                   <th className="border border-black px-4 py-2">{key}</th>
                 ))}
