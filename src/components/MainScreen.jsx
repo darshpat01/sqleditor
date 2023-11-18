@@ -2,26 +2,18 @@ import Editor from "./Editor";
 import EditorPanel from "./EditorPanel";
 import Table from "./Table";
 import Split from "react-split";
-import { useState } from "react";
+// import Split from "@uiw/react-split";
 
 function MainScreen() {
   return (
     <>
-      <div className=" h-full basis-[78%] p-2">
-        <div>
-          <EditorPanel />
-        </div>
-        <Split
-          className={"h-[calc(100vh-100px)]"}
-          direction="vertical"
-          minSize={0}
-          snapOffset={30}
-          sizes={[50, 50]}
-        >
-          <div className="overflow-auto">
+      <div className="flex flex-col h-screen basis-[78%] px-2">
+        <EditorPanel />
+        <Split className={"h-[calc(100vh-58px)]"} direction="vertical">
+          <div className="overflow-auto h-1/2">
             <Editor />
           </div>
-          <div className="overflow-auto relative">
+          <div className="overflow-auto h-1/2">
             <Table />
           </div>
         </Split>

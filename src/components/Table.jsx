@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MyContext } from "../MyContext";
 import { useContext } from "react";
 
@@ -7,32 +7,32 @@ function Table() {
 
   return (
     <>
-      <div className="border border-black w-full">
-        {tableData.length > 0 ? (
-          <div>
-            <table className="table-auto w-full">
-              <thead>
+      {tableData.length > 0 ? (
+        <div className="flex justify-center w-full h-full">
+          <table className="table-auto max-h-full w-full">
+            <thead>
+              <tr>
+                {Object.keys(tableData[0]).map((key) => (
+                  <th className="border border-black px-4 py-2">{key}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {tableData.map((row) => (
                 <tr>
-                  {Object.keys(tableData[0]).map((key) => (
-                    <th className="border border-black px-4 py-2">{key}</th>
+                  {Object.values(row).map((value) => (
+                    <td className="border border-black px-4 py-2">{value}</td>
                   ))}
                 </tr>
-              </thead>
-              <tbody>
-                {tableData.map((row) => (
-                  <tr>
-                    {Object.values(row).map((value) => (
-                      <td className="border border-black px-4 py-2">{value}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <div>No data</div>
-        )}
-      </div>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="flex justify-center w-full h-full">
+          <div className="flex items-center justify-center">No data</div>
+        </div>
+      )}
     </>
   );
 }
