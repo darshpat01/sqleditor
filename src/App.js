@@ -8,7 +8,6 @@ function App() {
   const [query, setQuery] = useState("");
   const [tableData, setTableData] = useState([]);
   const [history, setHistory] = useState([]);
-  // check from local storage
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("isDarkMode") === "true" ? true : false
   );
