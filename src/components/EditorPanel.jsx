@@ -2,6 +2,8 @@ import { MyContext } from "../MyContext";
 import { useContext } from "react";
 import { data1, data2, data3 } from "../assets/data";
 import { IoSunny, IoMoon } from "react-icons/io5";
+import { AiFillCaretRight } from "react-icons/ai";
+import { MdOutlineClear } from "react-icons/md";
 
 function EditorPanel() {
   const {
@@ -38,25 +40,27 @@ function EditorPanel() {
   return (
     <div className="flex justify-end px-4 py-2 gap-2">
       <button
-        className="rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5em] hover:bg-lightColor-50"
+        className="flex items-center justify-center rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5.5em] hover:bg-lightColor-50"
         onClick={runHandler}
       >
+        <AiFillCaretRight size={25} />
         Run
       </button>
       <button
-        className="rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5em] hover:bg-lightColor-50"
+        className="flex items-center justify-center rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5.5em] hover:bg-lightColor-50"
         onClick={clearHandler}
       >
+        <MdOutlineClear size={25} />
         Clear
       </button>
       <button
         onClick={() => toggleDarkMode()}
-        className="flex justify-center items-center rounded-lg p-2 bg-lightColor-100  text-white font-boldn min-w-[5em] hover:bg-lightColor-50"
+        className="flex justify-center items-center rounded-lg p-2 bg-lightColor-100  text-white font-boldn min-w-[5.5em] hover:bg-lightColor-50"
       >
         {isDarkMode ? (
-          <IoSunny className="text-2xl cursor-pointer" />
+          <IoSunny className=" cursor-pointer" size={25} />
         ) : (
-          <IoMoon className="text-2xl cursor-pointer" />
+          <IoMoon className=" cursor-pointer" size={25} />
         )}
       </button>
     </div>
