@@ -1,4 +1,4 @@
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+// import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 function TablePanel({
   currentPage,
@@ -20,7 +20,9 @@ function TablePanel({
               onClick={handlePrevPage}
               disabled={totalPages === 1}
             >
-              <FaAngleLeft size={20} />
+              <span className="material-symbols-outlined">
+                arrow_back_ios_new
+              </span>
             </button>
           )}
           <div>
@@ -32,7 +34,9 @@ function TablePanel({
               onClick={handleNextPage}
               disabled={totalPages === 1}
             >
-              <FaAngleRight size={20} />
+              <span className="material-symbols-outlined">
+                arrow_forward_ios
+              </span>
             </button>
           )}
         </div>

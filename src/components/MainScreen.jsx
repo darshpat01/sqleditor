@@ -3,12 +3,14 @@ import EditorPanel from "./EditorPanel";
 import Table from "./Table";
 import Split from "react-split";
 import TablePanel from "./TablePanel";
-import { MyContext } from "../MyContext";
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { tableData_atom } from "../atom";
+import { useAtom } from "jotai";
 
 function MainScreen() {
-  const { tableData } = useContext(MyContext);
-  const [resultsPerPage, setResultsPerPage] = useState(20);
+  const [tableData] = useAtom(tableData_atom);
+
+  const [resultsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = tableData
     ? Math.ceil(tableData.length / resultsPerPage)

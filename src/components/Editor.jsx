@@ -1,11 +1,12 @@
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { sql } from "@codemirror/lang-sql";
-import { MyContext } from "../MyContext";
-import { useContext } from "react";
 import { xcodeLight, xcodeDark } from "@uiw/codemirror-theme-xcode";
+import { query_atom, isDarkMode } from "../atom";
+import { useAtom } from "jotai";
 
 function Editor() {
-  const { query, setQuery, isDarkMode } = useContext(MyContext);
+  const [query, setQuery] = useAtom(query_atom);
+  const [isDM] = useAtom(isDarkMode);
 
   return (
     <>
@@ -17,7 +18,7 @@ function Editor() {
         onChange={(value) => {
           setQuery(value);
         }}
-        theme={isDarkMode ? xcodeDark : xcodeLight}
+        theme={isDM ? xcodeDark : xcodeLight}
       />
     </>
   );

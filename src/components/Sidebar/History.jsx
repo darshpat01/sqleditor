@@ -1,10 +1,14 @@
 import Query from "../ui/Query";
-import { MyContext } from "../../MyContext";
-import { useContext } from "react";
-import { MdDelete } from "react-icons/md";
+import { history_atom } from "../../atom";
+import { useAtom } from "jotai";
+// import React, { lazy, Suspense } from "react";
+
+// const MdDelete = lazy(() =>
+//   import("react-icons/md").then((module) => ({ default: module.MdDelete }))
+// );
 
 function History() {
-  const { history, setHistory } = useContext(MyContext);
+  const [history, setHistory] = useAtom(history_atom);
   return (
     <>
       <div className="flex flex-col rounded-lg p-4 bg-lightColor-300 mt-4 dark:bg-darkColor-300 flex-1 overflow-auto ">
@@ -13,11 +17,12 @@ function History() {
           <div className="font-bold text-xl dark:text-white items-center">
             History
           </div>
+
           <button
             onClick={() => setHistory([])}
-            className="justify-self-end dark:text-white p-1 rounded-full hover:bg-lightColor-200 dark:hover:bg-darkColor-100"
+            className="flex items-center py-1 justify-self-end dark:text-white px-1 rounded-full hover:bg-lightColor-200 dark:hover:bg-darkColor-100"
           >
-            <MdDelete size={25} />
+            <span className="material-symbols-outlined">delete</span>
           </button>
         </div>
 

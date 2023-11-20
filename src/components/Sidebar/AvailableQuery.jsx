@@ -1,8 +1,8 @@
 import Query from "../ui/Query";
-import { MyContext } from "../../MyContext";
-import { useContext } from "react";
+import { availableQueries_atom } from "../../atom";
+import { useAtom } from "jotai";
 function AvailableQuery() {
-  const { availableQueries } = useContext(MyContext);
+  const [availableQueries] = useAtom(availableQueries_atom);
   return (
     <>
       <div className="flex flex-col overflow-auto rounded-lg p-4 bg-lightColor-300 mt-4 dark:bg-darkColor-300 flex-1">
