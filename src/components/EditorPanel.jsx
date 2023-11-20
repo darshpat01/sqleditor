@@ -39,7 +39,6 @@ function EditorPanel() {
 
   return (
     <div className="flex justify-end px-4 py-2 gap-2">
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <button
         className="flex items-center justify-center rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5.5em] hover:bg-lightColor-50"
         onClick={runHandler}
