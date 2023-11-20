@@ -1,6 +1,6 @@
 import { MyContext } from "../MyContext";
 import { useContext } from "react";
-import { data1, data2 } from "../assets/data";
+import { data1, data2, data3 } from "../assets/data";
 import { IoSunny, IoMoon } from "react-icons/io5";
 
 function EditorPanel() {
@@ -12,16 +12,19 @@ function EditorPanel() {
     toggleDarkMode,
     history,
     setHistory,
+    availableQueries,
   } = useContext(MyContext);
 
   const runHandler = () => {
-    if (query === "SELECT * FROM table1;") {
+    if (query === availableQueries[0]) {
       setHistory([...history, query]);
       setTableData(data1);
-    } else if (query === "SELECT * FROM table2;") {
+    } else if (query === availableQueries[1]) {
       setHistory([...history, query]);
-
       setTableData(data2);
+    } else if (query === availableQueries[2]) {
+      setHistory([...history, query]);
+      setTableData(data3);
     } else {
       setTableData([]);
       alert("Please select from the available queries.");
@@ -46,19 +49,16 @@ function EditorPanel() {
       >
         Clear
       </button>
-      <div className="flex justify-center items-center rounded-lg p-2 bg-lightColor-100 text-white font-boldn min-w-[5em] hover:bg-lightColor-50">
+      <button
+        onClick={() => toggleDarkMode()}
+        className="flex justify-center items-center rounded-lg p-2 bg-lightColor-100  text-white font-boldn min-w-[5em] hover:bg-lightColor-50"
+      >
         {isDarkMode ? (
-          <IoSunny
-            className="text-2xl cursor-pointer"
-            onClick={() => toggleDarkMode()}
-          />
+          <IoSunny className="text-2xl cursor-pointer" />
         ) : (
-          <IoMoon
-            className="text-2xl cursor-pointer"
-            onClick={() => toggleDarkMode()}
-          />
+          <IoMoon className="text-2xl cursor-pointer" />
         )}
-      </div>
+      </button>
     </div>
   );
 }
