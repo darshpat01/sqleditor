@@ -1,18 +1,14 @@
 import React from "react";
-import { MyContext } from "../MyContext";
-import { useContext } from "react";
 
-function Table() {
-  const { tableData } = useContext(MyContext);
-
+function Table({ currentResults }) {
   return (
     <>
-      {tableData.length > 0 ? (
-        <div className="flex justify-center w-full h-full ">
-          <table className="table-auto max-h-full w-full dark:bg-white">
+      {currentResults.length > 0 ? (
+        <div className="flex justify-center w-full h-full overflow-auto">
+          <table className="table-auto h-full w-full dark:bg-white overflow-auto">
             <thead>
               <tr className="bg-lightColor-100 text-white">
-                {Object.keys(tableData[0]).map((key, i) => (
+                {Object.keys(currentResults[0]).map((key, i) => (
                   <th key={i} className="border border-black px-4 py-2">
                     {key}
                   </th>
@@ -20,7 +16,7 @@ function Table() {
               </tr>
             </thead>
             <tbody>
-              {tableData.map((row, i) => (
+              {currentResults.map((row, i) => (
                 <tr key={i}>
                   {Object.values(row).map((value, j) => (
                     <td key={j} className="border border-black px-4 py-2">
@@ -33,9 +29,9 @@ function Table() {
           </table>
         </div>
       ) : (
-        <div className="flex justify-center w-full h-full">
+        <div className="flex justify-center w-full h-full bg-lightColor-300 dark:bg-darkColor-300">
           <div className="flex items-center justify-center dark:text-white">
-            No data
+            Run a query to see result
           </div>
         </div>
       )}
