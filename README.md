@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# SQLEditor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a web application designed to accept SQL queries and display corresponding mock data tables. The primary function is to provide a basic interface for users to input SQL queries and visualize the hypothetical results in tabular form.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **SQL Query Editor:** The application includes a space (textarea) where users can input SQL queries. This can range from a basic textarea to a more sophisticated code editor.
+2. **Multiple Queries and Data Tables::** The application supports more than one predefined SQL query, each accompanied by a corresponding table of mock data. Users can toggle between these queries through the sidebar. The Table section can even handle large amounts of rows without breaking the application. With the help of Pagination users can easily view even large numbers of rows by switching pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **User-Friendly Interface::** While the design is not the focus, the layout is planned for a smooth user experience. A clear separation between the query input and result display areas is maintained.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Toggle Mechanism:** Users can easily switch between predefined queries using a dropdown or a similar toggle mechanism. This enhances user flow and accessibility.
 
-### `npm test`
+5. **Split View for Editor and Results:** The split view feature provides a distinct division between the SQL query editor and results sections, enabling users to simultaneously craft queries and view corresponding data for an efficient and focused user experience. Users can adjust section sizes enhancing flexibility in managing screen real estate.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. **History:** The application's history feature tracks previously entered SQL queries, allowing users to easily revisit and reuse their past queries. This functionality enhances user convenience by providing quick access to historical inputs.
 
-### `npm run build`
+7. **Themes (Dark Mode/Light Mode):** The inclusion of themes, such as Dark Mode and Light Mode, offers users a personalized visual experience. This feature allows users to switch between light and dark color schemes, catering to individual preferences and providing flexibility for different viewing environments. With the help of local storage the themes remain persistent. (when the user closes the applications and opens in the next time).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+8. **Error Handling and Feedback:** The application incorporates robust error handling and feedback mechanisms, providing users with clear notifications and guidance in case of syntax errors or other issues in their SQL queries. This ensures a user-friendly experience by helping users identify and rectify errors effectively.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## JavaScript Framework and Packages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React:** A widely embraced front-end JavaScript library, empowering the construction of user interfaces with a rich ecosystem.
 
-### `npm run eject`
+- **Jotai:** A minimalistic and efficient state management library, enhancing reactivity and simplicity in managing the application's state.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **react-codemirror:** Implemented as a React wrapper for CodeMirror, delivering a tailored code editor with syntax highlighting and intelligent SQL suggestions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Tailwind CSS:** Adopted as a utility-first CSS framework, accelerating the development of responsive and visually harmonized designs.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **react-split:** Utilized as a dynamic and adaptable split layout component for React, facilitating the integration of customizable split views and panes within the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **@uiw/codemirror-theme-xcode:** Xcode theme package to switch the editor to dark or light mode.
 
-## Learn More
+## Page Load Times and Performance
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Optimizations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **State Management with Jotai:** Jotai differs from the Context API in React by providing a more lightweight and efficient state management solution. Unlike the Context API, which can lead to unnecessary re-renders due to its global nature, Jotai optimizes reactivity and simplifies state management.In terms of memoization, Jotai employs an approach that doesn't rely on traditional memoization techniques like React.memo or useMemo. Instead, Jotai inherently ensures memoization by design. Each atom in Jotai is inherently memoized, and updates to atoms trigger re-renders only for the components that directly depend on the specific atom. This targeted reactivity eliminates unnecessary renders and enhances performance.
 
-### Code Splitting
+- **Pagination for Results:** The Pagination feature allows users to navigate through large sets of query results systematically. It divides the data into manageable chunks, presenting a limited number of records per page and providing intuitive navigation controls for enhanced user experience and data exploration.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Debounced Functions Calls:** The integration of debounced function calls ensures that certain operations, such as querying are executed only after a specified delay, preventing rapid and potentially resource-intensive invocations. This feature enhances application performance and responsiveness by optimizing the execution frequency of these functions.
