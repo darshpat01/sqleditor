@@ -7,9 +7,9 @@ This project is a web application designed to accept SQL queries and display cor
 ## Features
 
 1. **SQL Query Editor:** The application includes a space (textarea) where users can input SQL queries. This can range from a basic textarea to a more sophisticated code editor.
-2. **Multiple Queries and Data Tables::** The application supports more than one predefined SQL query, each accompanied by a corresponding table of mock data. Users can toggle between these queries through the sidebar. The Table section can even handle large amounts of rows without breaking the application. With the help of Pagination users can easily view even large numbers of rows by switching pages.
+2. **Multiple Queries and Data Tables:** The application supports more than one predefined SQL query, each accompanied by a corresponding table of mock data. Users can toggle between these queries through the sidebar. The Table section can even handle large amounts of rows without breaking the application. With the help of Pagination users can easily view even large numbers of rows by switching pages.
 
-3. **User-Friendly Interface::** While the design is not the focus, the layout is planned for a smooth user experience. A clear separation between the query input and result display areas is maintained.
+3. **User-Friendly Interface:** While the design is not the focus, the layout is planned for a smooth user experience. A clear separation between the query input and result display areas is maintained.
 
 4. **Toggle Mechanism:** Users can easily switch between predefined queries using a dropdown or a similar toggle mechanism. This enhances user flow and accessibility.
 
