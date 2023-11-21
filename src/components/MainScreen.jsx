@@ -9,7 +9,6 @@ import { useAtom } from "jotai";
 
 function MainScreen() {
   const [tableData] = useAtom(tableData_atom);
-
   const [resultsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = tableData
@@ -36,6 +35,7 @@ function MainScreen() {
       setCurrentPage(currentPage - 1);
     }
   }
+
   return (
     <>
       <div className="flex flex-col h-screen basis-[78%] px-2">
