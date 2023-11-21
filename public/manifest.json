@@ -1,6 +1,13 @@
 {
   "short_name": "Sqleditor",
   "name": "SQLEditor App by Darshan Patel",
+  "icons": [
+    {
+      "src": "icon1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
