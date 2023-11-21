@@ -37,6 +37,8 @@ This project is a web application designed to accept SQL queries and display cor
 
 ## Page Load Times and Performance
 
+<img width="1495" alt="performance report" src="https://github.com/darshpat01/sqleditor/assets/68650149/716cfab1-97b1-4ffc-9e88-48e2c88e20a3">
+
 ## Optimizations
 
 - **State Management with Jotai:** Jotai differs from the Context API in React by providing a more lightweight and efficient state management solution. Unlike the Context API, which can lead to unnecessary re-renders due to its global nature, Jotai optimizes reactivity and simplifies state management.In terms of memoization, Jotai employs an approach that doesn't rely on traditional memoization techniques like React.memo or useMemo. Instead, Jotai inherently ensures memoization by design. Each atom in Jotai is inherently memoized, and updates to atoms trigger re-renders only for the components that directly depend on the specific atom. This targeted reactivity eliminates unnecessary renders and enhances performance.
