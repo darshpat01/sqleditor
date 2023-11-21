@@ -37,6 +37,8 @@ This project is a web application designed to accept SQL queries and display cor
 
 ## Page Load Times and Performance
 
+Lighthouse Report:
+
 <img width="1495" alt="performance report" src="https://github.com/darshpat01/sqleditor/assets/68650149/716cfab1-97b1-4ffc-9e88-48e2c88e20a3">
 
 ## Optimizations
